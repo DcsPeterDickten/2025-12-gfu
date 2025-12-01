@@ -1,9 +1,8 @@
-import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'books-list',
-  imports: [JsonPipe],
+  imports: [],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css',
 })
