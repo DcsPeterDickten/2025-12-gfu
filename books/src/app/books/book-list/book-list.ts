@@ -12,16 +12,20 @@ export class BookList {
     {
       isbn: '12345',
       title: 'Angular 19',
-      price: 12.99
+      price: 13.49,
+      coverUrl: 'https://m.media-amazon.com/images/I/71Wv+d6oP6L._SY342_.jpg'
+
     },{
       isbn: '12346',
       title: 'Angular 20',
-      price: 14.99
+      price: 14.99,
+      coverUrl: 'https://m.media-amazon.com/images/I/71Wv+d6oP6L._SY342_.jpg'
 
     },{
       isbn: '12347',
       title: 'Angular 21',
-      price: 19.99
+      price: 19.99,
+      coverUrl: 'https://m.media-amazon.com/images/I/71Wv+d6oP6L._SY342_.jpg'
     }
    ];
 }

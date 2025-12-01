@@ -2,7 +2,7 @@
 
 <div>
     @if (books && books.length > 0) {
-      {{books | json}}
+      {{books.length}} Bücher vorhanden
     } @else {
       Leider keine Bücher vorhanden
     }
@@ -16,12 +16,13 @@
         <td></td>
         <td></td>
     </tr>
-    @for(book of books; track book.isbn) {
+    @for(book of books; track book.isbn; let i = $index ) {
     <tr>
-        <td>{{book.isbn}}</td>
+        <td>{{i+1}}: {{book.isbn}}</td>
         <td>{{book.title}}</td>
         <td>{{book.price}}</td>
-        <td></td>
+        <td><img [src]="book.coverUrl" 
+                 [style.width.px]="50"></td>
         <td></td>
     </tr>
     }
