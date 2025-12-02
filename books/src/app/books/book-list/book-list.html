@@ -31,7 +31,7 @@
   <tr>
     <td>{{i+1}}: {{book.isbn}}</td>
     <td>{{book.title}}</td>
-    <td>{{book.price}}</td>
+    <td>{{book.price | currency : 'EUR' : 'symbol' : '1.2-2'}}</td>
     <td [style.height.px]='70'>
       @if(coverIsVisible) {
       <img [src]="book.coverUrl" [style.width.px]="50">

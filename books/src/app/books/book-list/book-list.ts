@@ -1,9 +1,10 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'books-list',
-  imports: [FormsModule],
+  imports: [FormsModule, CurrencyPipe],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css',
 })
@@ -13,7 +14,7 @@ export class BookList {
     {
       isbn: '12345',
       title: 'Angular 19',
-      price: 13.49,
+      price: 13.0,
       coverUrl: 'https://m.media-amazon.com/images/I/71Wv+d6oP6L._SY342_.jpg'
 
     }, {
