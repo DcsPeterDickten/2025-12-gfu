@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Book } from '../book';
 
@@ -11,12 +11,24 @@ import { Book } from '../book';
   //styleUrls: ['./book-list.css'],
   //styles: ['div {background-color: green}']
 })
-export class BookList {
+export class BookList implements OnInit, OnChanges, OnDestroy {
 
   /// variable = new BookList();
 
   constructor() {
     console.log('BookList - constructor');
+  }
+
+  ngOnInit() {
+    console.log('BookList - ngOnInit');
+  }
+
+  ngOnDestroy() {
+    console.log('BookList - ngOnDestroy');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('BookList - ngOnChanges', changes);
   }
 
   books: Array<Book> = [
