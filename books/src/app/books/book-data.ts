@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Book } from './book';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +30,18 @@ export class BookData {
       }
     ]
   }
+
+  async getBooks2(): Promise<Book[]> {
+    const URL = environment.SERVER_URL + '/books';
+    const response = await fetch(URL);
+    const books = await response.json() as Book[];
+    return books;
+  }
+
+  getBook(isbn: string) {
+    const URL = environment.SERVER_URL + '/books/' + isbn;
+  }
+
 
 
 }
