@@ -1,29 +1,36 @@
 <p>book-list works!</p>
 
 <div>
-    @if (books && books.length > 0) {
-      {{books.length}} Bücher vorhanden
-    } @else {
-      Leider keine Bücher vorhanden
-    }
+  @if (books && books.length > 0) {
+  {{books.length}} Bücher vorhanden
+  } @else {
+  Leider keine Bücher vorhanden
+  }
 </div>
 
+<button (click)="toggleCover()">
+  Cover ein/ausblenden
+</button>
+
 <table>
-    <tr>
-        <td>ISBN</td>
-        <td>Titel</td>
-        <td>Preis</td>
-        <td></td>
-        <td></td>
-    </tr>
-    @for(book of books; track book.isbn; let i = $index ) {
-    <tr>
-        <td>{{i+1}}: {{book.isbn}}</td>
-        <td>{{book.title}}</td>
-        <td>{{book.price}}</td>
-        <td><img [src]="book.coverUrl" 
-                 [style.width.px]="50"></td>
-        <td></td>
-    </tr>
-    }
+  <tr>
+    <td>ISBN</td>
+    <td>Titel</td>
+    <td>Preis</td>
+    <td>Titelbild</td>
+    <td></td>
+  </tr>
+  @for(book of books; track book.isbn; let i = $index ) {
+  <tr>
+    <td>{{i+1}}: {{book.isbn}}</td>
+    <td>{{book.title}}</td>
+    <td>{{book.price}}</td>
+    <td>
+      @if(coverIsVisible) {
+      <img [src]="book.coverUrl" [style.width.px]="50">
+      }
+    </td>
+    <td></td>
+  </tr>
+  }
 </table>
