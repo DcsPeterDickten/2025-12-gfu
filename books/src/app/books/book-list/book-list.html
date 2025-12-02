@@ -25,7 +25,7 @@
     <td>Titel</td>
     <td>Preis</td>
     <td>Titelbild</td>
-    <td></td>
+    <td>Bewertung</td>
   </tr>
   @for(book of (books | bookFilter : filterValue); track book.isbn; let i = $index ) {
   <tr>
@@ -37,7 +37,11 @@
       <img [src]="book.coverUrl" [style.width.px]="50">
       }
     </td>
-    <td></td>
+    <td>
+      <rating [id]="book.isbn" [stars]="book.rating" (plusWasClicked)="ratingPlus($event)"
+        (minusWasClicked)="ratingMinus($event)">
+      </rating>
+    </td>
   </tr>
   }
 </table>
