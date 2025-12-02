@@ -1,16 +1,19 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Book } from '../book';
 
 @Component({
   selector: 'books-list',
   imports: [FormsModule, CurrencyPipe],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css',
+  //styleUrls: ['./book-list.css'],
+  //styles: ['div {background-color: green}']
 })
 export class BookList {
 
-  books = [
+  books: Array<Book> = [
     {
       isbn: '12345',
       title: 'Angular 19',

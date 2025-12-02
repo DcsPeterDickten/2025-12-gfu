@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Generated schema for Root",
+    "type": "object",
+    "properties": {
+        "isbn": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "price": {
+            "type": "number"
+        },
+        "coverUrl": {
+            "type": "string"
+        },
+        "rating": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "isbn",
+        "title",
+        "price",
+        "coverUrl"
+    ]
+}
