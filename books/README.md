@@ -1,3 +1,10 @@
+# Backend-Installation
+
+ npm install -g json-server@0.17.4 
+
+# Backend-Aufruf 
+json-server -w -d 300 -i isbn  ./src/data/db.json 
+
 # Books
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.

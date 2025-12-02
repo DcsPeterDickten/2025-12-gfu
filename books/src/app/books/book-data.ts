@@ -28,7 +28,6 @@ export class BookData {
         rating: 4.8
       }
     ]
-
   }
 
 
