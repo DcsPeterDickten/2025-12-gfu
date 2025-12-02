@@ -24,7 +24,7 @@ export class BookList {
     }, {
       isbn: '12347',
       title: 'Angular 21',
-      price: 19.99,
+      price: 20.99,
       coverUrl: 'https://m.media-amazon.com/images/I/71Wv+d6oP6L._SY342_.jpg'
     }
   ];
@@ -35,7 +35,6 @@ export class BookList {
 
   toggleCover() {
     this.coverIsVisible = !this.coverIsVisible;
-    console.log('this.coverIsVisible', this.coverIsVisible);
   }
 
 }
