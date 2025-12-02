@@ -8,8 +8,15 @@
   }
 </div>
 
+<p>
+  Filter nach:
+  <input type="text" [(ngModel)]="filterValue" placeholder="Filter nach ...">
+</p>
+
+<p>{{filterValue}}</p>
+
 <button (click)="toggleCover()">
-  Cover ein/ausblenden
+  Cover {{coverIsVisible ? 'aus' : 'ein'}}blenden
 </button>
 
 <table>
@@ -25,7 +32,7 @@
     <td>{{i+1}}: {{book.isbn}}</td>
     <td>{{book.title}}</td>
     <td>{{book.price}}</td>
-    <td>
+    <td [style.height.px]='70'>
       @if(coverIsVisible) {
       <img [src]="book.coverUrl" [style.width.px]="50">
       }

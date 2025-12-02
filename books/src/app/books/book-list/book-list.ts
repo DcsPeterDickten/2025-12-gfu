@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'books-list',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css',
 })
@@ -30,6 +31,7 @@ export class BookList {
   ];
 
   coverIsVisible: boolean = true;
+  filterValue: string = '';
 
   // ---- 
 
