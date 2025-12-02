@@ -13,6 +13,12 @@ import { Book } from '../book';
 })
 export class BookList {
 
+  /// variable = new BookList();
+
+  constructor() {
+    console.log('BookList - constructor');
+  }
+
   books: Array<Book> = [
     {
       isbn: '12345',
