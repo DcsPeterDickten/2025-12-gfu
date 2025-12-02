@@ -2,10 +2,11 @@ import { CurrencyPipe } from '@angular/common';
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Book } from '../book';
+import { BookFilterPipe } from '../book-filter-pipe';
 
 @Component({
   selector: 'books-list',
-  imports: [FormsModule, CurrencyPipe],
+  imports: [FormsModule, CurrencyPipe, BookFilterPipe],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css',
   //styleUrls: ['./book-list.css'],
