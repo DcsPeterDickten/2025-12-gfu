@@ -7,6 +7,8 @@ import { environment } from '../../environments/environment.development';
 })
 export class BookData {
 
+
+
   getBooks(): Book[] {
     return [
       {
@@ -41,7 +43,5 @@ export class BookData {
   getBook(isbn: string) {
     const URL = environment.SERVER_URL + '/books/' + isbn;
   }
-
-
 
 }
