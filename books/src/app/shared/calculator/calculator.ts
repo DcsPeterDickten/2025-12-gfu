@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'calculator',
   imports: [FormsModule],
   templateUrl: './calculator.html',
   styleUrl: './calculator.css',

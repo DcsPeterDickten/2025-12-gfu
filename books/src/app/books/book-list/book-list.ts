@@ -8,7 +8,7 @@ import { BookData } from '../book-data';
 import { BookFilterPipe } from '../book-filter-pipe';
 
 @Component({
-  selector: 'books-list',
+  // selector: 'books-list',
   imports: [FormsModule, CurrencyPipe, BookFilterPipe, Rating, RouterLink],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css',

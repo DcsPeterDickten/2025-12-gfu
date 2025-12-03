@@ -1,1 +1,30 @@
-<p>book-detail works!</p>
+@if (book) {
+<table>
+    <tr>
+        <td>ISBN</td>
+        <td>{{book.isbn}}</td>
+    </tr>
+    <tr>
+        <td>Titel</td>
+        <td>{{book.title}}</td>
+    </tr>
+    <tr>
+        <td>Preis</td>
+        <td>{{book.price}}</td>
+    </tr>
+    <tr>
+        <td>Rating</td>
+        <td>{{book.rating}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+} @else {
+Buch nicht gefunden
+}
+
+<br />
+<button (click)="zurListe()">Zurück zur Bücherliste</button>
