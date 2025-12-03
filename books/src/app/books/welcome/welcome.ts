@@ -1,6 +1,6 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, filter, from, map, of, ReplaySubject, Subject, Subscription, timer } from 'rxjs';
+import { BehaviorSubject, filter, from, map, of, ReplaySubject, Subject, Subscription, takeUntil, timer } from 'rxjs';
 
 @Component({
   imports: [AsyncPipe],
@@ -20,6 +20,7 @@ export class Welcome implements OnInit, OnDestroy {
   // mySubject$ = new ReplaySubject<string>(10);
 
   mySubscriptions$: Subscription[] = [];
+  destroy$: Subject<string> = new Subject();
 
   constructor() {
     // this.obs3$.subscribe((data) => console.log('obs3$', data));
@@ -35,13 +36,12 @@ export class Welcome implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.mySubscriptions$.push(timer(0, 500).subscribe(console.log));
+    const obs$ = timer(0, 500).pipe(takeUntil(this.destroy$));
+    obs$.subscribe(console.log);
   }
 
   ngOnDestroy(): void {
-    this.mySubscriptions$.forEach(s => s?.unsubscribe());
+    this.destroy$.next("He's dead Jim")
   }
-
-
 
 }
