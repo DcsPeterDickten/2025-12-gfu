@@ -1,11 +1,11 @@
-import { AsyncPipe, CurrencyPipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from "@angular/router";
 import { Rating } from '../../shared/rating/rating';
 import { Book } from '../book';
 import { BookData } from '../book-data';
 import { BookFilterPipe } from '../book-filter-pipe';
-import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'books-list',
