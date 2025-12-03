@@ -23,9 +23,17 @@ export class BookData {
   async getBookWithHttpClient(): Promise<Book[]> {
     const URL = environment.SERVER_URL + '/books';
     const observableBooks$ = this.httpClient.get<Book[]>(URL);
+    const observableBooks2$ = this.httpClient.get<Book[]>(URL);
     const promiseBooks$ = firstValueFrom(observableBooks$);
     return promiseBooks$;
   }
+
+  async getBookWithHttpClient2(): Promise<Book[]> {
+    const URL = environment.SERVER_URL + '/books';
+    const observableBooks2$ = this.httpClient.get<Book[]>(URL);
+    return [];
+  }
+
 
   async getBook(isbn: string): Promise<Book | null> {
     const URL = environment.SERVER_URL + '/books/' + isbn;

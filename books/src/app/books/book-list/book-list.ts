@@ -30,7 +30,7 @@ export class BookList implements OnInit, OnChanges, OnDestroy {
 
   async ngOnInit() {
     console.log('BookList - ngOnInit');
-    this.books = await this.myBookService.getBooks();
+    this.books = await this.myBookService.getBookWithHttpClient();
     this.ref.markForCheck();
   }
 
