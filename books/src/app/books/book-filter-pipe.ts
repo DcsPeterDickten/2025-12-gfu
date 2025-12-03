@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Book } from './book';
-import { filter } from 'rxjs';
 
 @Pipe({
   name: 'bookFilter',
@@ -9,7 +8,7 @@ export class BookFilterPipe implements PipeTransform {
 
   // (books | bookFilter : filterValue)
 
-  transform(books: Book[], filterValue: string = ''): unknown {
+  transform(books: Book[], filterValue: string = ''): Book[] {
 
     if (filterValue === '') {
       return books;
