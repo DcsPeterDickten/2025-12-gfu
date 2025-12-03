@@ -1,5 +1,3 @@
-<p>book-list works!</p>
-
 <div>
   @if (books && books.length > 0) {
   {{books.length}} Bücher vorhanden
@@ -30,7 +28,9 @@
   @for(book of (books | bookFilter : filterValue); track book.isbn; let i = $index ) {
   <tr>
     <td>{{i+1}}: {{book.isbn}}</td>
-    <td>{{book.title}}</td>
+    <td>
+      <a [routerLink]="['/book', book.isbn]">{{book.title}}</a>
+    </td>
     <td>{{book.price | currency : 'EUR' : 'symbol' : '1.2-2'}}</td>
     <td [style.height.px]='70'>
       @if(coverIsVisible) {

@@ -5,10 +5,11 @@ import { Rating } from '../../shared/rating/rating';
 import { Book } from '../book';
 import { BookData } from '../book-data';
 import { BookFilterPipe } from '../book-filter-pipe';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'books-list',
-  imports: [FormsModule, CurrencyPipe, BookFilterPipe, Rating],
+  imports: [FormsModule, CurrencyPipe, BookFilterPipe, Rating, RouterLink],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush

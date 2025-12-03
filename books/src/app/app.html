@@ -1,8 +1,17 @@
-<h1>Hallo, {{ title }}</h1>
-<div>Congratulations! Your app is running. 🎉</div>
+<header>
+    <p>
+        <a routerLink="/">Startseite</a> &nbsp;&nbsp;
+        <a routerLink="/books">Bücher</a>&nbsp;&nbsp;
+        <a routerLink="/taschenrechner">Taschenrechner</a>&nbsp;&nbsp;
+    </p>
+    <h1>Hallo, {{ title }}</h1>
+    <hr />
+</header>
 
-<calculator></calculator>
-
-<books-list></books-list>
 
 <router-outlet />
+
+<footer>
+    <hr />
+    (c) by ....
+</footer>
