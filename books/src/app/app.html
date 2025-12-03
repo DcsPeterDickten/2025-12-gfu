@@ -1,8 +1,11 @@
 <header>
     <p>
-        <a routerLink="/">Startseite</a> &nbsp;&nbsp;
-        <a routerLink="/books">Bücher</a>&nbsp;&nbsp;
-        <a routerLink="/taschenrechner">Taschenrechner</a>&nbsp;&nbsp;
+        <a routerLink="/" routerLinkActive="text-uppercase" [routerLinkActiveOptions]="{exact:true}">Startseite</a>
+        &nbsp;&nbsp;
+        <a routerLink="/books" routerLinkActive="text-uppercase"
+            [routerLinkActiveOptions]="{exact:true}">Bücher</a>&nbsp;&nbsp;
+        <a routerLink="/taschenrechner" routerLinkActive="text-uppercase"
+            [routerLinkActiveOptions]="{exact:true}">Taschenrechner</a>&nbsp;&nbsp;
     </p>
     <h1>Hallo, {{ title }}</h1>
     <hr />
