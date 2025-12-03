@@ -1,16 +1,17 @@
-import { CurrencyPipe, JsonPipe } from '@angular/common';
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { AsyncPipe, CurrencyPipe } from '@angular/common';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Book } from '../book';
-import { BookFilterPipe } from '../book-filter-pipe';
 import { Rating } from '../../shared/rating/rating';
+import { Book } from '../book';
 import { BookData } from '../book-data';
+import { BookFilterPipe } from '../book-filter-pipe';
 
 @Component({
   selector: 'books-list',
-  imports: [FormsModule, CurrencyPipe, BookFilterPipe, Rating, JsonPipe],
+  imports: [FormsModule, CurrencyPipe, BookFilterPipe, Rating],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
   //styleUrls: ['./book-list.css'],
   //styles: ['div {background-color: green}']
 })
@@ -22,14 +23,14 @@ export class BookList implements OnInit, OnChanges, OnDestroy {
 
   // ---- 
 
-  constructor(private myBookService: BookData) {
+  constructor(private myBookService: BookData, private ref: ChangeDetectorRef) {
     console.log('BookList - constructor');
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     console.log('BookList - ngOnInit');
-    this.books = this.myBookService.getBooks();
-    // 
+    this.books = await this.myBookService.getBooks();
+    this.ref.markForCheck();
   }
 
   ngOnDestroy() {
